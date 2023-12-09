@@ -1,4 +1,19 @@
 .convert-main {
   height: 100vh;
   color: var(--text-color);
+
+  &.dragging {
+    background-color: #333;
+    opacity: 0.5;
+    border: 2px dashed #fff;
+    animation: runningBorder 2s infinite linear;
+  }
+}
+@keyframes runningBorder {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
 }
