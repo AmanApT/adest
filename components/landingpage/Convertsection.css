@@ -1,9 +1,10 @@
 .convert-section {
   /* height: 100vh; */
-  padding: 4rem 2rem;
+  padding: 4rem 0rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+ z-index: 4;
   justify-content: center;
 }
 
@@ -13,15 +14,16 @@
     rgba(84, 90, 238, 0.22) 5.21%,
     rgba(169, 36, 232, 0.04) 96.68%
   );
-
+  /* background-color: red; */
+  z-index: 20;
   border-radius: 10px;
   border: 1px solid #8c8383;
-  width: 25vw;
+  width: 30vw;
   padding: 2rem;
   color: var(--text-color);
 }
 .card-title{
-    padding: 2%;
+    padding: 4% 2%;
 }
 .card-description{
     color:var(--subText-color);

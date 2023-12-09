@@ -10,22 +10,22 @@ const CardContent = [
     img: "",
   },
   {
-    title: "PNG TO PDF",
+    title: "WORD TO PDF",
     description: "Convert multiple png files into one pdf.",
     img: "",
   },
   {
-    title: "PNG TO PDF",
+    title: "EXCEL TO PDF",
     description: "Convert multiple png files into one pdf.",
     img: "",
   },
   {
-    title: "PNG TO PDF",
+    title: "PRESENTATION TO PDF",
     description: "Convert multiple png files into one pdf.",
     img: "",
   },
   {
-    title: "PNG TO PDF",
+    title: "PDF TO PDF",
     description: "Convert multiple png files into one pdf.",
     img: "",
   },
