@@ -1,22 +1,27 @@
-.hero-section{
-    display: flex;
-    padding: 4rem;
-    gap:5rem;
+.hero-section {
+  display: flex;
+  padding: 4rem;
+  gap: 5rem;
 }
 
-.hero-section-left{
-
+/* .hero-section-left {
+} */
+.hero-section-heading {
+  font-size: 5rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
-.hero-section-heading{
-    font-size: 5rem;
-    font-weight: 500;
-    color:var(--text-color)
+.hero-span::after {
+  content: "";
+  width: 100%;
+  background-color: var(--stroke);
+  height: 8px;
+  display: block;
+  margin-top: 2px;
+  position: absolute;
+  left: 0;
 }
-.hero-span::after{
-    /* content: '';
-    width: 100%;
-    background-color: var(--stroke);
-    height: 8px;
-    display: block;
-    margin-top: 2px; */
+.hero-span {
+  color: red;
+  position: relative;
 }
