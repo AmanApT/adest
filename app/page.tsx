@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Nav from '@/components/landingpage/Nav'
+import Hero from '@/components/landingpage/Hero'
 
 export default function Home() {
   return (
-        <div>
+        <section className='landing-page'>
           <Nav />
-        </div>
+          <Hero />
+
+        </section>
   )
 }

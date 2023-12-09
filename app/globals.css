@@ -10,3 +10,8 @@
   --subText-color : #A9A9A9;
   --text-color: #fff;
 }
+
+.landing-page{
+  background-color: var(--primary-bg);
+  height: 100vh;
+}
