@@ -1,0 +1,8 @@
+.convert-nav {
+  padding: 2rem;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  box-shadow: 0px 8px 4px 0px rgba(113, 112, 118, 0.25);
+  display: flex;
+  justify-content: space-between;
+}
