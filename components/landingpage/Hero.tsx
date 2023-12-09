@@ -1,7 +1,4 @@
 import "@/components/landingpage/Hero.css";
-import Image from "next/image";
-import image from "@/assets/herostar.png";
-
 const Hero = () => {
   return (
     <section className="hero-section">
@@ -9,9 +6,9 @@ const Hero = () => {
         <p className="hero-section-heading">
           Get your
           <svg
-            style={{ marginLeft: "1rem" }}
-            height="50px"
-            width="50px"
+            style={{ marginLeft: "1.8rem" }}
+            height="40px"
+            width="40px"
             version="1.1"
             id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,12 +31,13 @@ const Hero = () => {
               ></path>{" "}
             </g>
           </svg>
-          <p>desired format</p>
-          <p>
-            at <span className="hero-span">one click</span>{" "}
-          </p>
         </p>
-        <button className="get-started-btn">GET STARTED</button>
+        <p className="hero-section-heading">desired format</p>
+        <p className="hero-section-heading">
+          at <span className="hero-span">one click</span>{" "}
+        </p>
+
+        <button className="get-started-btn-hero">GET STARTED</button>
       </div>
       <div className="hero-section-right"></div>
     </section>

@@ -7,7 +7,7 @@
 /* .hero-section-left {
 } */
 .hero-section-heading {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 500;
   color: var(--text-color);
 }
@@ -17,11 +17,31 @@
   background-color: var(--stroke);
   height: 8px;
   display: block;
-  margin-top: 2px;
+  margin-top: -5px;
   position: absolute;
   left: 0;
 }
 .hero-span {
-  color: red;
+  color: var(--text-color);
   position: relative;
 }
+
+
+.get-started-btn-hero {
+    padding: 12px 14px;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    /* font-weight: 100; */
+    /* border: 1.3px solid var(--subText-color); */
+    background-color: var(--jasmine-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border-style: none;
+  }
+  .get-started-btn-hero:hover {
+    background-color: var(--text-color);
+    cursor: pointer;
+    color: var(--primary-bg);
+  }
+  
