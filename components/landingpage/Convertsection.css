@@ -1,0 +1,32 @@
+.convert-section {
+  /* height: 100vh; */
+  padding: 4rem 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.each-convert-card {
+  background: linear-gradient(
+    111deg,
+    rgba(84, 90, 238, 0.22) 5.21%,
+    rgba(169, 36, 232, 0.04) 96.68%
+  );
+
+  border-radius: 10px;
+  border: 1px solid #8c8383;
+  width: 25vw;
+  padding: 2rem;
+  color: var(--text-color);
+}
+.card-title{
+    padding: 2%;
+}
+.card-description{
+    color:var(--subText-color);
+    padding: 2%;
+}
+.card-img{
+    font-size: 2rem;
+}
