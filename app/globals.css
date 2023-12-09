@@ -15,4 +15,8 @@
 .landing-page {
   background-color: var(--primary-bg);
   /* height: 100vh; */
+  overflow-y: hidden;
+}
+::-webkit-scrollbar{
+  display: none;
 }
