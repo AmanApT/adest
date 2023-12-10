@@ -1,11 +1,16 @@
 "use client";
-
+import { useParams } from 'next/navigation';
 import "@/components/converterpage/Main.css";
 import { ChangeEvent, DragEvent, useState } from "react";
 
 const Main = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+
+
+
+  const {title} = useParams();
+
 
   const handleClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
@@ -37,21 +42,20 @@ const Main = () => {
 
   return (
     <div
-      //   className="convert-main"
       className={`convert-main ${isDragging ? "dragging" : ""}`}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDragOver={handleDrag}
       onDrop={handleDrop}
     >
-      <div>Main</div>
+      <h1>{title}</h1>
       <input
         type="file"
         id="fileInput"
         style={{ display: "none" }}
         onChange={handleFileChange}
       />
-      <button onClick={handleClick}>Press Me</button>
+      <button className="get-started-btn-hero" onClick={handleClick}>Press Me</button>
       {selectedFile && <p>Selected File: {selectedFile.name}</p>}
     </div>
   );
