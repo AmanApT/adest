@@ -27,6 +27,7 @@ const Main = () => {
   };
   const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
+    setIsDragging(false);
 
     const file = event.dataTransfer.files && event.dataTransfer.files[0];
     setSelectedFile(file || null);
