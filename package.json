@@ -13,7 +13,8 @@
     "jspdf": "^2.5.1",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "webp-converter-browser": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",

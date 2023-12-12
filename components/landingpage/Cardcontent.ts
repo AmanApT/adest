@@ -25,7 +25,7 @@ const CardContent = [
     img: "",
   },
   {
-    title: "PDF TO PDF",
+    title: "JPG TO WEBP",
     description: "Convert multiple png files into one pdf.",
     img: "",
   },

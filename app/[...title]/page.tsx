@@ -4,6 +4,7 @@ import "@/app/[...title]/convert.css";
 import Jpgtopdf from "@/components/converterpage/Jpgtopdf";
 import { useParams, useRouter } from "next/navigation";
 import Wrongroute from "@/components/wrongroute/Wrongroute";
+import Jpgtowebp from "@/components/converterpage/Jpgtowebp";
 
 const CardDetail = () => {
   const allowedTitles = [
@@ -13,6 +14,7 @@ const CardDetail = () => {
     "exceltopdf",
     "presentationtopdf",
     "pdftopdf",
+    "jpgtowebp",
   ];
 
   const { title } = useParams();
@@ -24,6 +26,7 @@ const CardDetail = () => {
       <div className="convert-page">
         <Nav />
         {title[0] === "jpgtopdf" && <Jpgtopdf />}
+        {title[0] === "jpgtowebp" && <Jpgtowebp />}
       </div>
     );
   } else
