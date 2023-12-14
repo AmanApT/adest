@@ -23,3 +23,24 @@
   }
 }
 
+.file-box {
+  display: flex;
+  gap: 2rem;
+  /* border: 1px soild green; */
+  background-color: #333;
+  padding: 1rem;
+  width: 80vw;
+  /* flex-wrap: wrap; */
+  overflow-x: scroll;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.each-file {
+  width: 200px;
+  height: 300px;
+  background-color: red;
+  color: white;
+  cursor: move;
+  user-select: none;
+}
