@@ -15,8 +15,12 @@
 .landing-page {
   background-color: var(--primary-bg);
   /* height: 100vh; */
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar{
   display: none;
+}
+
+::selection{
+  color:var(--jasmine-bg);
 }

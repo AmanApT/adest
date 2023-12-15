@@ -1,4 +1,6 @@
 import "@/components/landingpage/Hero.css";
+import Image from "next/image";
+import cat from '@/assets/cat.png'
 const Hero = () => {
   return (
     <section className="hero-section">
@@ -39,7 +41,12 @@ const Hero = () => {
 
         <button className="get-started-btn-hero">GET STARTED</button>
       </div>
-      <div className="hero-section-right"></div>
+      <div className="hero-section-right">
+      <Image className="cat" src={cat} alt="billi" />
+        <div className="hero-section-right-child">
+
+        </div>
+      </div>
     </section>
   );
 };

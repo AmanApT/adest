@@ -47,6 +47,10 @@ const Jpgtopdf = () => {
     setIsDragging(false);
 
     const files = event.dataTransfer.files;
+    console.log(files);
+    
+
+    
 
     if (files && files.length > 0) {
       // Update selectedFiles with the new files
@@ -99,6 +103,8 @@ const Jpgtopdf = () => {
 
       // Wait for all Image objects to load
       const images = await Promise.all(imgLoadPromises);
+      console.log(images);
+      
 
       // Iterate through selected files and add each image to the PDF
       for (let i = 0; i < images.length; i++) {
