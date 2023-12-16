@@ -1,5 +1,7 @@
 .hero-section {
+  /* position: relative; */
   display: flex;
+  justify-content: space-between;
   /* padding: 8rem; */
   /* padding-left: 9%;
   padding-right: 10%;
@@ -9,7 +11,7 @@
   padding-right: 5%;
   padding-bottom: 10%;
   /* height: 100vh; */
-  gap: 5rem;
+  /* gap: 5rem; */
   /* height: 100%; */
 }
 
@@ -53,7 +55,7 @@
   color: var(--primary-bg);
 }
 .hero-section-right{
-  position: relative;
+  /* position: relative; */
   width: 40%;
   /* background-color: bisque; */
   backdrop-filter: blur(10px) saturate(180%);
@@ -63,17 +65,5 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
   /* z-index: 15; */
 }
-.cat{
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  left: 40%;
-  top: -35%;
-  /* z-index: -100; */
-  transition: all 400ms ease;
- 
-}
-.cat:hover{
-  transform: scaleX(1.1);
-  /* z-index: -200; */
-}
+
+

@@ -6,6 +6,7 @@
 
 :root {
   --primary-bg: #1c1833;
+  /* --primary-bg: linear-gradient(245deg, rgba(0,5,34,1) 38%, rgba(58,1,115,1) 65%); */
   --stroke: #55dcab;
   --subText-color: #a9a9a9;
   --text-color: #fff;
@@ -13,7 +14,10 @@
 }
 
 .landing-page {
-  background-color: var(--primary-bg);
+  /* background-color: var(--primary-bg); */
+  background: rgb(0,5,34);
+  /* background-color: black; */
+  
   /* height: 100vh; */
   overflow-x: hidden;
 }
@@ -23,4 +27,19 @@
 
 ::selection{
   color:var(--jasmine-bg);
+}
+
+.cat{
+  z-index: 100;
+  position: fixed;
+  width: 15%;
+  height: 18%;
+  right: -10%;
+  bottom: -2%;
+  transition: all 400ms ease;
+}
+.cat:hover{
+  transform: rotate(-10deg) scale(1.2);
+  right: -4%;
+  height: 18%;
 }
