@@ -15,21 +15,21 @@
 
 .landing-page {
   /* background-color: var(--primary-bg); */
-  background: rgb(0,5,34);
+  background: rgb(0, 5, 34);
   /* background-color: black; */
-  
+
   /* height: 100vh; */
   overflow-x: hidden;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 
-::selection{
-  color:var(--jasmine-bg);
+::selection {
+  color: var(--jasmine-bg);
 }
 
-.cat{
+.cat {
   z-index: 100;
   position: fixed;
   width: 15%;
@@ -38,7 +38,7 @@
   bottom: -2%;
   transition: all 400ms ease;
 }
-.cat:hover{
+.cat:hover {
   transform: rotate(-10deg) scale(1.2);
   right: -4%;
   height: 18%;

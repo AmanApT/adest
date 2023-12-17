@@ -1,10 +1,14 @@
+/* :root {
+  --card-color: rgb(23, 23, 23);
+} */
+
 .convert-section {
   /* height: 100vh; */
   padding: 4rem 0rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
- z-index: 4;
+  z-index: 4;
   justify-content: center;
 }
 
@@ -17,18 +21,75 @@
   /* background-color: red; */
   z-index: 20;
   border-radius: 10px;
-  border: 1px solid #8c8383;
+  /* border: 1px solid #8c8383; */
   width: 30vw;
-  padding: 2rem;
+  /* padding: 2rem; */
   color: var(--text-color);
+  position: relative;
 }
-.card-title{
-    padding: 4% 2%;
+.card-border,
+.each-convert-card::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  /* top: 0; */
+  top: 0;
+  width: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 500ms;
 }
-.card-description{
-    color:var(--subText-color);
-    padding: 2%;
+
+.each-convert-card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
 }
-.card-img{
-    font-size: 2rem;
+
+.card-border {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.3),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.each-convert-card:hover::before {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card-content {
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  background: linear-gradient(
+    111deg,
+    rgba(84, 90, 238, 0.22) 5.21%,
+    rgba(169, 36, 232, 0.04) 96.68%
+  );
+  padding: 2rem;
+  border-radius: 10px;
+  color: var(--text-color);
+  position: relative;
+  z-index: 2;
+}
+/* .each-convert-card:hover {
+  background-color: black;
+  cursor: pointer;
+} */
+
+.card-title {
+  padding: 4% 2%;
+}
+.card-description {
+  color: var(--subText-color);
+  padding: 2%;
+}
+.card-img {
+  font-size: 2rem;
 }
