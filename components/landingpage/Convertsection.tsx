@@ -11,6 +11,7 @@ const Convertsection = () => {
           title={i.title}
           description={i.description}
           img={i.img}
+          svgLink={i.svgLink}
         />
       ))}
     </section>
