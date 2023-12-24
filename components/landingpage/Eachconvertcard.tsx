@@ -15,14 +15,14 @@ const Eachconvertcard: React.FC<EachconvertcardProp> = ({
   title,
   description,
   img,
-  svgLink
+  svgLink,
 }) => {
   const router = useRouter();
   const handleClick = () => {
     const newTitle = title.split(" ").join("").toLowerCase();
-    console.log(newTitle);
+    // console.log(newTitle);
 
-    router.push(`/${newTitle}`);
+    // router.push(`/${newTitle}`);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -38,7 +38,7 @@ const Eachconvertcard: React.FC<EachconvertcardProp> = ({
 
   return (
     <div
-      onClick={handleClick}
+      // onClick={handleClick}
       className="each-convert-card"
       onMouseMove={handleMouseMove}
     >
@@ -75,7 +75,7 @@ const Eachconvertcard: React.FC<EachconvertcardProp> = ({
             ></path>
           </g>
         </svg> */}
-            <div dangerouslySetInnerHTML={{ __html: svgLink }} />
+        <div dangerouslySetInnerHTML={{ __html: svgLink }} />
         <p className="card-title">{title}</p>
         <p className="card-description">{description}</p>
       </div>
