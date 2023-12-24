@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary-bg: #1c1833;
-  /* --primary-bg: linear-gradient(245deg, rgba(0,5,34,1) 38%, rgba(58,1,115,1) 65%); */
+  /* --primary-bg: #1c1833; */
+  --primary-bg: rgb(0, 5, 34);
   --stroke: #55dcab;
   --subText-color: #a9a9a9;
   --text-color: #fff;
@@ -15,7 +15,7 @@
 
 .landing-page {
   /* background-color: var(--primary-bg); */
-  background: rgb(0, 5, 34);
+  background: var(--primary-bg);
   /* background-color: black; */
 
   /* height: 100vh; */

@@ -13,19 +13,23 @@
 }
 
 .each-convert-card {
-  background: linear-gradient(
+  /* background: linear-gradient(
     111deg,
     rgba(84, 90, 238, 0.22) 5.21%,
     rgba(169, 36, 232, 0.04) 96.68%
-  );
-  /* background-color: red; */
-  z-index: 20;
+  ); */
+  /* background-color: var(--primary-bg); */
+  z-index: 2;
   border-radius: 10px;
-  /* border: 1px solid #8c8383; */
   width: 30vw;
-  /* padding: 2rem; */
   color: var(--text-color);
   position: relative;
+  transition: 0.2s;
+}
+.each-convert-card:hover{
+  transform: scale(0.95, 0.95);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 .card-border,
 .each-convert-card::before {
