@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "browser-image-compression": "^2.0.2",
     "image-to-pdf": "^2.0.0",
     "jspdf": "^2.5.1",
     "next": "14.0.4",

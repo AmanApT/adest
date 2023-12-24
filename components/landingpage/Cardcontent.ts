@@ -106,8 +106,8 @@ const CardContent = [
   </svg>`,
   },
   {
-    title: "PRESENTATION TO PDF",
-    description: "Convert multiple png files into one pdf.",
+    title: "IMAGE COMPRESSION",
+    description: "Compress your image size.",
     img: "",
     svgLink: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 50 50">
     <path
