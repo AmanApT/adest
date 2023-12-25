@@ -84,4 +84,7 @@
     font-size: 2.7rem;
     /* margin-top: 5%; */
   }
+  .hero-section-right {
+    max-width: 70%;
+  }
 }
