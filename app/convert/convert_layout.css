@@ -1,4 +1,6 @@
 .convert-page {
   background-color: var(--primary-bg);
-  height: 100vh;
+  /* height: 100vh; */
+  /* position: relative; */
+  /* padding-bottom: 15%; */
 }
