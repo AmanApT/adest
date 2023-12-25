@@ -1,10 +1,15 @@
 "use client";
 
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, DragEvent } from "react";
 import imageCompression from "browser-image-compression";
+import "@/components/converterpage/ImageCompress.css";
+import "@/components/converterpage/Jpgtopdf.css";
+
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const ImgCompression = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -62,23 +67,111 @@ const ImgCompression = () => {
     });
   };
 
+  const handleClick = () => {
+    const fileInput = document.getElementById("fileInput") as HTMLInputElement;
+    fileInput.click();
+  };
+
+  const handleDrag = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+
+    const files = event.dataTransfer.files;
+    console.log(files);
+
+    if (files && files.length > 0) {
+      // Update selectedFiles with the new files
+      setSelectedFiles((prevSelectedFiles) => [
+        ...prevSelectedFiles,
+        ...Array.from(files),
+      ]);
+    }
+  };
+
+  const handleDragEnter = (event: DragEvent<HTMLDivElement>) => {
+    if (event.dataTransfer.types.includes("Files")) {
+      setIsDragging(true);
+    }
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDeleteFile = (index: number) => {
+    setSelectedFiles((prevSelectedFiles) => {
+      const updatedFiles = [...prevSelectedFiles];
+      updatedFiles.splice(index, 1);
+      return updatedFiles;
+    });
+  };
+
   return (
-    <div>
+    <div
+      className={`compress-parent ${isDragging ? "dragging" : ""}`}
+      onDragOver={handleDrag}
+      onDrop={handleDrop}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+    >
       <h1>Image Compression</h1>
       <input
         type="file"
+        id="fileInput"
         accept="image/*"
         onChange={handleFileChange}
         multiple
+        style={{ display: "none" }}
       />
-      {selectedFiles.length > 0 && (
+
+      <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
+        {selectedFiles.length > 0 ? "Add More Files" : "Select JPG Files"}
+      </button>
+
+      {/* {selectedFiles.length > 0 && (
         <div className="file-box">
           {selectedFiles.map((file, index) => (
             <div key={index}>{file.name}</div>
           ))}
         </div>
+      )} */}
+
+      {selectedFiles[0] ? <></> : <p>Or Drop JPG here</p>}
+      {selectedFiles.length > 0 && (
+        <div className="file-box">
+          {selectedFiles.map((file, index) => (
+            <>
+              <div className="selected-image-container">
+                <div
+                  key={index}
+                  className="each-file"
+                  style={{ cursor: "default" }}
+                >
+                  <CancelIcon
+                    onClick={() => handleDeleteFile(index)}
+                    className="close-icon"
+                    color="error"
+                  />
+
+                  <div className="each-file-bg"></div>
+                </div>
+                {file.name.substring(0, 15)}
+              </div>
+            </>
+          ))}
+        </div>
       )}
-      <button onClick={handleDownload}>Click here</button>
+
+      {selectedFiles[0] ? (
+        <button className="convert-button" onClick={handleDownload}>
+          Convert
+        </button>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

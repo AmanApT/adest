@@ -3,7 +3,7 @@ import "@/components/converterpage/Jpgtopdf.css";
 import { ChangeEvent, DragEvent, useState } from "react";
 import { convertImageToPDF } from "@/utils/imgtopdf";
 import jsPDF from "jspdf";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from "next/navigation";
 
 import CancelIcon from "@mui/icons-material/Cancel";
 
@@ -15,14 +15,11 @@ const Jpgtopdf = () => {
   // const { title } = useParams();
   // // console.log(title);
   // console.log(useParams());
-  const pathname = usePathname()
-  if(pathname =='/convert/jpgtopdf'){
+  const pathname = usePathname();
+  if (pathname == "/convert/jpgtopdf") {
     console.log(true);
-    
   }
   console.log(pathname);
-  
-  
 
   const handleClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
@@ -179,17 +176,23 @@ const Jpgtopdf = () => {
       onDragOver={handleDrag}
       onDrop={handleDrop}
     >
-      {
-        pathname =='/convert/jpgtopdf' ? <h1 className="convert-heading">JPG to PDF</h1> : <h1 className="convert-heading">PNG to PDF</h1>
-      }
-      {
-         pathname =='/convert/jpgtopdf' ?  <p className="convert-sub-heading">
-         Convert each JPG page into a PDF in just a click
-       </p> :  <p className="convert-sub-heading">
-        Convert each PNG page into a PDF in just a click
-      </p>
-      }
-     
+      {pathname == "/convert/jpgtopdf" ? (
+        <h1 className="convert-heading">JPG to PDF</h1>
+      ) : pathname == "/convert/webptopdf" ? (
+        <h1 className="convert-heading">WEBP to PDF</h1>
+      ) : (
+        <h1 className="convert-heading">PNG to PDF</h1>
+      )}
+      {pathname == "/convert/jpgtopdf" ? (
+        <p className="convert-sub-heading">
+          Convert each JPG page into a PDF in just a click
+        </p>
+      ) : (
+        <p className="convert-sub-heading">
+          Convert each PNG page into a PDF in just a click
+        </p>
+      )}
+
       <input
         type="file"
         id="fileInput"
@@ -200,7 +203,6 @@ const Jpgtopdf = () => {
       {selectedFiles[0] ? (
         <></>
       ) : (
-       
         <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
           Select JPG Files
         </button>
