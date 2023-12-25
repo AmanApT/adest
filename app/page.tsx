@@ -5,6 +5,7 @@ import Whyus from "@/components/landingpage/Whyus";
 import Image from "next/image";
 import cat from "@/assets/cat.png";
 import Navbar from "@/components/landingpage/Navbar";
+import AboutUs from "@/components/landingpage/AboutUs";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Convertsection />
       <Whyus />
+      <AboutUs />
     </section>
   );
 }

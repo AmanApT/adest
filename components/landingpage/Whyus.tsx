@@ -5,8 +5,8 @@ const Whyus = () => {
     <section className="why-us">
       <p className="why-us-heading">The PDF software trusted by no one</p>
       <p className="why-us-desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua adfljdfa jdfal anupreet loves rupali{" "}
+        Transform your files effortlessly! Unlock multiple conversion options
+        with our user-friendly software for seamless document transformations.
       </p>
       <div className="circle" />
       <div className="circle2" />
