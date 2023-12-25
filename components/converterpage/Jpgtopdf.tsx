@@ -1,15 +1,28 @@
 "use client";
-import { useParams } from "next/navigation";
 import "@/components/converterpage/Jpgtopdf.css";
 import { ChangeEvent, DragEvent, useState } from "react";
 import { convertImageToPDF } from "@/utils/imgtopdf";
 import jsPDF from "jspdf";
-import CancelIcon from '@mui/icons-material/Cancel';
+import { usePathname, useRouter } from 'next/navigation';
+
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const Jpgtopdf = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+
+  // const { title } = useParams();
+  // // console.log(title);
+  // console.log(useParams());
+  const pathname = usePathname()
+  if(pathname =='/convert/jpgtopdf'){
+    console.log(true);
+    
+  }
+  console.log(pathname);
+  
+  
 
   const handleClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
@@ -166,10 +179,17 @@ const Jpgtopdf = () => {
       onDragOver={handleDrag}
       onDrop={handleDrop}
     >
-      <h1 className="convert-heading">JPG to PDF</h1>
-      <p className="convert-sub-heading">
-        Convert each JPG page into a PDF in just a click
+      {
+        pathname =='/convert/jpgtopdf' ? <h1 className="convert-heading">JPG to PDF</h1> : <h1 className="convert-heading">PNG to PDF</h1>
+      }
+      {
+         pathname =='/convert/jpgtopdf' ?  <p className="convert-sub-heading">
+         Convert each JPG page into a PDF in just a click
+       </p> :  <p className="convert-sub-heading">
+        Convert each PNG page into a PDF in just a click
       </p>
+      }
+     
       <input
         type="file"
         id="fileInput"
@@ -180,14 +200,12 @@ const Jpgtopdf = () => {
       {selectedFiles[0] ? (
         <></>
       ) : (
+       
         <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
           Select JPG Files
         </button>
       )}
-    {
-selectedFiles[0] ? (<></>) : (<p>Or Drop JPG here</p>)
-      
-    }
+      {selectedFiles[0] ? <></> : <p>Or Drop JPG here</p>}
       {selectedFiles.length > 0 && (
         <div className="file-box">
           {/* <ul>
@@ -206,7 +224,11 @@ selectedFiles[0] ? (<></>) : (<p>Or Drop JPG here</p>)
                   onDragOver={(e) => handleDragOver(e, index)}
                   onDragEnd={handleDragEnd}
                 >
-                  <CancelIcon  onClick={() => handleDeleteFile(index)} className="close-icon" color="error" />
+                  <CancelIcon
+                    onClick={() => handleDeleteFile(index)}
+                    className="close-icon"
+                    color="error"
+                  />
 
                   <div className="each-file-bg"></div>
                 </div>
@@ -231,7 +253,7 @@ selectedFiles[0] ? (<></>) : (<p>Or Drop JPG here</p>)
           className="add-files-btn"
           onClick={() => document.getElementById("fileInput")?.click()}
         >
-          Add More Files
+          Add More
         </button>
       )}
       {selectedFiles[0] ? (

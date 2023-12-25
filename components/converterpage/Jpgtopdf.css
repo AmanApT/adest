@@ -63,16 +63,23 @@
   background-size: cover;
   background-position: center;
 }
-.delete-btn{
-  padding: 5px 9px;
+
+.add-files-btn{
+  padding: 15px 15px;
   /* margin-top: 1.5rem; */
-  font-size: 1.1rem;
-  /* font-weight: 600; */
-  border-radius: 5px;
-  background-color: rgb(55, 0, 255);
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+  border-radius: 15px;
+  background-color: var(--jasmine-bg);
   color: var(--text-color);
   transition: all 0.3s ease;
   border-style: none;
+}
+
+.add-files-btn:hover{
+  background-color: var(--text-color);
+  cursor: pointer;
+  color: var(--primary-bg);
 }
 
 .jpg-to-pdf-convert-btn {
@@ -101,15 +108,30 @@
   opacity: 0.7;
 }
 .convert-button {
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
   padding: 1rem 1.5rem;
   margin-top: 1.5rem;
   font-size: 1.2rem;
   font-weight: 500;
   border-radius: 15px;
-  background-color: var(--jasmine-bg);
-  color: var(--text-color);
+  animation: glowing 2s infinite;
   transition: all 0.3s ease;
   border-style: none;
+  box-shadow: 0 0 5px var(--jasmine-bg), 0 0 25px var(--jasmine-bg)
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px var(--jasmine-bg), 0 0 15px var(--jasmine-bg);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--jasmine-bg), 0 0 75px var(--jasmine-bg);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--jasmine-bg), 0 0 15px var(--jasmine-bg);
+  }
 }
 .convert-button:hover {
   background-color: var(--text-color);
