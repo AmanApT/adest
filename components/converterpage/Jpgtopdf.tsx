@@ -10,8 +10,6 @@ const Jpgtopdf = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
 
-  const { title } = useParams();
-
   const handleClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
     fileInput.click();
@@ -48,9 +46,6 @@ const Jpgtopdf = () => {
 
     const files = event.dataTransfer.files;
     console.log(files);
-    
-
-    
 
     if (files && files.length > 0) {
       // Update selectedFiles with the new files
@@ -104,7 +99,6 @@ const Jpgtopdf = () => {
       // Wait for all Image objects to load
       const images = await Promise.all(imgLoadPromises);
       console.log(images);
-      
 
       // Iterate through selected files and add each image to the PDF
       for (let i = 0; i < images.length; i++) {
@@ -171,7 +165,10 @@ const Jpgtopdf = () => {
       onDragOver={handleDrag}
       onDrop={handleDrop}
     >
-      <h1>{title}</h1>
+      <h1 className="convert-heading">JPG to PDF</h1>
+      <p className="convert-sub-heading">
+        Convert each JPG page into a PDF in just a click
+      </p>
       <input
         type="file"
         id="fileInput"
@@ -179,9 +176,13 @@ const Jpgtopdf = () => {
         onChange={handleFileChange}
         multiple
       />
-      <button className="get-started-btn-hero" onClick={handleClick}>
-        Press Me
+      {
+        selectedFiles[0] ? <></> : <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
+        Select JPG Files
       </button>
+      }
+      
+      <p>Or Drop JPG here</p>
       {selectedFiles.length > 0 && (
         <div className="file-box">
           {/* <ul>
@@ -191,16 +192,18 @@ const Jpgtopdf = () => {
           </ul> */}
           {selectedFiles.map((file, index) => (
             <>
-              <div
-                key={index}
-                className="each-file"
-                draggable
-                onDragStart={(e) => handleDragStart(e, index)}
-                onDragOver={(e) => handleDragOver(e, index)}
-                onDragEnd={handleDragEnd}
-              >
+              <div className="selected-image-container">
+                <div
+                  key={index}
+                  className="each-file"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, index)}
+                  onDragOver={(e) => handleDragOver(e, index)}
+                  onDragEnd={handleDragEnd}
+                >
+                </div>
                 {file.name}
-                <button onClick={() => handleDeleteFile(index)}>Delete</button>
+                <button className="delete-btn" onClick={() => handleDeleteFile(index)}>Delete</button>
               </div>
               {/* <img
                 src={file.imgUrl}
@@ -224,7 +227,13 @@ const Jpgtopdf = () => {
           Add More Files
         </button>
       )}
-      <button onClick={handleConvertClick}>Hiii</button>
+      {selectedFiles[0] ? (
+        <button className="convert-button" onClick={handleConvertClick}>
+          Convert
+        </button>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

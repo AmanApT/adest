@@ -1,11 +1,12 @@
 .convert-main {
-  /* height: 100vh; */
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  padding: 10%;
+  padding-top: 3%;
+  height: 100vh;
+  padding-bottom: 5%;
+  gap: 0.7rem;
 
   &.dragging {
     background-color: #333;
@@ -26,21 +27,84 @@
 .file-box {
   display: flex;
   gap: 2rem;
-  /* border: 1px soild green; */
-  background-color: #333;
   padding: 1rem;
   width: 80vw;
-  /* flex-wrap: wrap; */
+  /* height: 150vh; */
+
   overflow-x: scroll;
-  /* align-items: center; */
+
   justify-content: center;
 }
 
+.selected-image-container {
+  display: flex;
+  /* gap:1rem; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .each-file {
-  width: 200px;
-  height: 300px;
-  background-color: red;
-  color: white;
+  width: 100px;
+  height: 150px;
+  /* margin-bottom: 10%; */
+  background: url("../../assets/jpg.png");
+  background-size: cover;
+  background-position: center;
   cursor: move;
   user-select: none;
+}
+
+.delete-btn{
+  padding: 5px 9px;
+  /* margin-top: 1.5rem; */
+  font-size: 1.1rem;
+  /* font-weight: 600; */
+  border-radius: 5px;
+  background-color: rgb(55, 0, 255);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-style: none;
+}
+
+.jpg-to-pdf-convert-btn {
+  padding: 1.5rem 3rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 15px;
+  background-color: var(--jasmine-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-style: none;
+}
+.jpg-to-pdf-convert-btn:hover {
+  background-color: var(--text-color);
+  cursor: pointer;
+  color: var(--primary-bg);
+}
+.convert-heading {
+  font-size: 2.6rem;
+  opacity: 0.8;
+}
+.convert-sub-heading {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+.convert-button {
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 15px;
+  background-color: var(--jasmine-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-style: none;
+}
+.convert-button:hover {
+  background-color: var(--text-color);
+  cursor: pointer;
+  color: var(--primary-bg);
 }
