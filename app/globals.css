@@ -43,3 +43,22 @@
   right: -4%;
   height: 18%;
 }
+
+.cat-popper{
+  position: fixed;
+  z-index: 100;
+  right: 4%;
+  bottom: 10%;
+  border-radius: 20px;
+  height: 15vh;
+  width: 18vw;
+  padding: 1%;
+  background-color: transparent;
+  /* border: 1px solid cyan; */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color:white;
+}

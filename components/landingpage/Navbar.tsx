@@ -122,7 +122,7 @@ export default function Navbar(props: Props) {
               boxSizing: "border-box",
               width: drawerWidth,
               //   backgroundColor: "rgb(0, 5, 34)",
-              backgroundColor: "rgb(2, 19, 117)",
+              backgroundColor: "#000522",
               color: "white",
             },
           }}
