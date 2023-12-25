@@ -97,3 +97,9 @@
 .card-img {
   font-size: 2rem;
 }
+
+@media screen and (max-width: 600px) {
+  .each-convert-card {
+    width: 80vw;
+  }
+}

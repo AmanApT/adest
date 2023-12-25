@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.1",
+    "@mui/material": "^5.15.1",
     "browser-image-compression": "^2.0.2",
     "image-to-pdf": "^2.0.0",
     "jspdf": "^2.5.1",

@@ -1,19 +1,20 @@
-import Nav from '@/components/landingpage/Nav'
-import Hero from '@/components/landingpage/Hero'
-import Convertsection from '@/components/landingpage/Convertsection'
-import Whyus from '@/components/landingpage/Whyus'
+import Nav from "@/components/landingpage/Nav";
+import Hero from "@/components/landingpage/Hero";
+import Convertsection from "@/components/landingpage/Convertsection";
+import Whyus from "@/components/landingpage/Whyus";
 import Image from "next/image";
-import cat from "@/assets/cat.png"
+import cat from "@/assets/cat.png";
+import Navbar from "@/components/landingpage/Navbar";
 
 export default function Home() {
   return (
-        <section className='landing-page'>
-          <Image className="cat" src={cat} alt="billi" />
-          <Nav />
-          <Hero />
-          <Convertsection />
-          <Whyus />
-          
-        </section>
-  )
+    <section className="landing-page">
+      <Image className="cat" src={cat} alt="billi" />
+      {/* <Nav /> */}
+      <Navbar />
+      <Hero />
+      <Convertsection />
+      <Whyus />
+    </section>
+  );
 }

@@ -1,0 +1,17 @@
+.navbar-item {
+  cursor: pointer;
+}
+
+.navbar-item::after {
+  content: "";
+  width: 0%;
+  background-color: var(--stroke);
+  height: 2px;
+  display: block;
+  transition: all 0.5s ease;
+  margin-top: 2px;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+}
