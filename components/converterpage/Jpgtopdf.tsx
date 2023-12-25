@@ -184,8 +184,10 @@ const Jpgtopdf = () => {
           Select JPG Files
         </button>
       )}
-
-      <p>Or Drop JPG here</p>
+    {
+selectedFiles[0] ? (<></>) : (<p>Or Drop JPG here</p>)
+      
+    }
       {selectedFiles.length > 0 && (
         <div className="file-box">
           {/* <ul>
