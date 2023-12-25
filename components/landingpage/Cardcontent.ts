@@ -62,7 +62,7 @@ const CardContent = [
   </svg>`,
   },
   {
-    title: "WORD TO PDF",
+    title: "WEBP TO PDF",
     description: "Convert multiple png files into one pdf.",
     img: "",
     svgLink: ` <svg
