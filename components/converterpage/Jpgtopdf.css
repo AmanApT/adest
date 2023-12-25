@@ -29,32 +29,40 @@
   gap: 2rem;
   padding: 1rem;
   width: 80vw;
-  /* height: 150vh; */
-
   overflow-x: scroll;
-
   justify-content: center;
 }
 
 .selected-image-container {
   display: flex;
-  /* gap:1rem; */
+  
+  width: 20%;
+  flex-direction: column;
+  gap:0.5rem;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+.close-icon{
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .each-file {
-  width: 100px;
-  height: 150px;
-  /* margin-bottom: 10%; */
-  background: url("../../assets/jpg.png");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  padding: 15%;
+  background-color: white;
   cursor: move;
   user-select: none;
+  border-radius: 10px;
 }
-
+.each-file-bg{
+  width: 70px;
+  height: 100px;
+   background: url("../../assets/jpg.png");
+  background-size: cover;
+  background-position: center;
+}
 .delete-btn{
   padding: 5px 9px;
   /* margin-top: 1.5rem; */
