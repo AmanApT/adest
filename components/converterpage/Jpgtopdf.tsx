@@ -4,6 +4,7 @@ import "@/components/converterpage/Jpgtopdf.css";
 import { ChangeEvent, DragEvent, useState } from "react";
 import { convertImageToPDF } from "@/utils/imgtopdf";
 import jsPDF from "jspdf";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const Jpgtopdf = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -176,13 +177,17 @@ const Jpgtopdf = () => {
         onChange={handleFileChange}
         multiple
       />
-      {
-        selectedFiles[0] ? <></> : <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
-        Select JPG Files
-      </button>
-      }
+      {selectedFiles[0] ? (
+        <></>
+      ) : (
+        <button className="jpg-to-pdf-convert-btn" onClick={handleClick}>
+          Select JPG Files
+        </button>
+      )}
+    {
+selectedFiles[0] ? (<></>) : (<p>Or Drop JPG here</p>)
       
-      <p>Or Drop JPG here</p>
+    }
       {selectedFiles.length > 0 && (
         <div className="file-box">
           {/* <ul>
@@ -201,9 +206,11 @@ const Jpgtopdf = () => {
                   onDragOver={(e) => handleDragOver(e, index)}
                   onDragEnd={handleDragEnd}
                 >
+                  <CancelIcon  onClick={() => handleDeleteFile(index)} className="close-icon" color="error" />
+
+                  <div className="each-file-bg"></div>
                 </div>
-                {file.name}
-                <button className="delete-btn" onClick={() => handleDeleteFile(index)}>Delete</button>
+                {file.name.substring(0, 15)}
               </div>
               {/* <img
                 src={file.imgUrl}
