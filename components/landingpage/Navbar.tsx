@@ -62,7 +62,11 @@ export default function Navbar(props: Props) {
           sx={{
             height: "7vh",
             backgroundColor: "rgb(0, 5, 34)",
-            // paddingX: "4rem",
+            boxShadow: "0px 0px 20px 2px rgba(212, 138, 247, 0.55)",
+            // padding: "2.5rem 2rem 2.5rem 2rem",
+            paddingTop: { xs: "2rem", sm: "2.5rem" },
+            paddingBottom: { xs: "2rem", sm: "2.5rem" },
+            paddingLeft: "2rem",
           }}
           //   style={{ padding: "2.5rem 4rem" }}
         >
@@ -76,13 +80,25 @@ export default function Navbar(props: Props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h4"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+              marginLeft: "3.5rem",
+              fontSize: "1.7rem",
+              fontWeight: "600",
+            }}
           >
             Adest
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "2rem" }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              gap: "2rem",
+              marginRight: "2rem",
+            }}
+          >
             {navItems.map((item) => (
               <div key={item} className="navbar-item">
                 {item}
@@ -105,6 +121,9 @@ export default function Navbar(props: Props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              //   backgroundColor: "rgb(0, 5, 34)",
+              backgroundColor: "rgb(2, 19, 117)",
+              color: "white",
             },
           }}
         >
