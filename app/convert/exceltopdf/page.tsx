@@ -1,7 +1,5 @@
 // import React from 'react'
 import cat from "@/assets/cat.png";
-
-import Wrongroute from "@/components/wrongroute/Wrongroute";
 import Image from "next/image";
 
 const page = () => {
