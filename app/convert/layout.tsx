@@ -1,6 +1,7 @@
 import Nav from "@/components/converterpage/Nav";
 import "@/app/convert/convert_layout.css";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/landingpage/Navbar";
 
 export default function ConvertLayout({
   children,
@@ -9,7 +10,8 @@ export default function ConvertLayout({
 }) {
   return (
     <div className="convert-page">
-      <Nav />
+      {/* <Nav /> */}
+      <Navbar />
       {children}
       <Footer />
     </div>

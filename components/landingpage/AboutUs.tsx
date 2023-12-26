@@ -10,7 +10,7 @@ const AboutUs = () => {
     fontSize: "68px",
   };
   return (
-    <div className="about-us-container">
+    <div id="contact" className="about-us-container">
       <div className="about-us-left">
         <h1 className="about-us-heading">What is Adest ? </h1>
         <p>

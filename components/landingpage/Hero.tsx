@@ -1,6 +1,7 @@
 import "@/components/landingpage/Hero.css";
 import Image from "next/image";
 import hero from '@/assets/hero.png'
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -39,8 +40,10 @@ const Hero = () => {
         <p className="hero-section-heading">
           at <span className="hero-span">one click</span>{" "}
         </p>
+<Link href="#convert-area">
 
         <button className="get-started-btn-hero">GET STARTED</button>
+</Link>
       </div>
       <div className="hero-section-right">
         {/* <div className="hero-section-right-child"> */}

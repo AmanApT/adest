@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 import React from "react";
 import "@/components/landingpage/Navbar.css";
+import Link from "next/link";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -43,7 +44,15 @@ export default function Navbar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link href={
+                    item === "About"
+                      ? "#about-us"
+                      : item === "Contact"
+                      ? "#contact"
+                      : ""
+                  }>
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -101,7 +110,18 @@ export default function Navbar(props: Props) {
           >
             {navItems.map((item) => (
               <div key={item} className="navbar-item">
-                {item}
+                <Link
+                style={{scrollBehavior:'smooth'}}
+                  href={
+                    item === "About"
+                      ? "#about-us"
+                      : item === "Contact"
+                      ? "#contact"
+                      : ""
+                  }
+                >
+                  {item}
+                </Link>
               </div>
             ))}
           </Box>

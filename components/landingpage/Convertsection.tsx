@@ -5,7 +5,7 @@ import "@/components/landingpage/Convertsection.css";
 
 const Convertsection = () => {
   return (
-    <section className="convert-section">
+    <section id="convert-area" className="convert-section">
       {CardContent.map((i, id) => (
         <Link
           href={`/convert/${i.title.split(" ").join("").toLowerCase()}`}

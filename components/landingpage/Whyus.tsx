@@ -2,7 +2,7 @@ import "@/components/landingpage/Whyus.css";
 
 const Whyus = () => {
   return (
-    <section className="why-us">
+    <section id='about-us' className="why-us">
       <p className="why-us-heading">The PDF software trusted by no one</p>
       <p className="why-us-desc">
         Transform your files effortlessly! Unlock multiple conversion options
