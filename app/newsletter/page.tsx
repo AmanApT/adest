@@ -7,7 +7,7 @@ import iconSuccess from "@/assets/icon-success.svg";
 import "@/components/landingpage/Newsletter.css";
 import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const [errorEmail, setErrorEmail] = useState<string>("");
   const [errorContact, setErrorContact] = useState<string>("");
   const [isActiveError, setIsActiveError] = useState<boolean>(false);
@@ -145,4 +145,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
