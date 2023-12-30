@@ -2,8 +2,10 @@ import "@/components/landingpage/Hero.css";
 import Image from "next/image";
 import hero from '@/assets/hero.png'
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
   return (
     <section className="hero-section">
       <div className="hero-section-left">
@@ -40,9 +42,9 @@ const Hero = () => {
         <p className="hero-section-heading">
           at <span className="hero-span">one click</span>{" "}
         </p>
-<Link href="#convert-area">
+<Link href="/newsletter">
 
-        <button className="get-started-btn-hero">GET STARTED</button>
+        <button className="get-started-btn-hero">Sign Up for Newsletter</button>
 </Link>
       </div>
       <div className="hero-section-right">

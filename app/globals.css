@@ -54,7 +54,6 @@
   width: 18vw;
   padding: 1%;
   background-color: transparent;
-  /* border: 1px solid cyan; */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);

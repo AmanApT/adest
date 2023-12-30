@@ -1,4 +1,3 @@
-// import React from 'react'
 import cat from "@/assets/cat.png";
 import Image from "next/image";
 
@@ -10,8 +9,6 @@ const page = () => {
         display: "flex",
         alignItems: "center",
         paddingTop:"4rem",
-        // gap:"1rem",
-        // justifyContent: "center",
         flexDirection:"column"
 
       }}

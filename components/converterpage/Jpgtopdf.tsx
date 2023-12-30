@@ -11,16 +11,7 @@ const Jpgtopdf = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-
-  // const { title } = useParams();
-  // // console.log(title);
-  // console.log(useParams());
   const pathname = usePathname();
-  if (pathname == "/convert/jpgtopdf") {
-    console.log(true);
-  }
-  console.log(pathname);
-
   const handleClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
     fileInput.click();
@@ -29,18 +20,6 @@ const Jpgtopdf = () => {
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files && files.length > 0) {
-      // const updatedFiles: File[] = [];
-
-      // for (let i = 0; i < files.length; i++) {
-      //   const file = files[i] as CustomFile;
-      //   const imgDataUrl: string = await convertImageToPDF(file);
-
-      //   updatedFiles.push({
-      //     ...file,
-      //     imgUrl: imgDataUrl,
-      //   });
-      // }
-
       setSelectedFiles((prevSelectedFiles) => [
         ...prevSelectedFiles,
         ...Array.from(files),

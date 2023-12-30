@@ -15,9 +15,8 @@ const AboutUs = () => {
         <h1 className="about-us-heading">What is Adest ? </h1>
         <p>
           Adest is a product developed by Credhill, a company founded by Aman
-          Pathak and Anupreet Srivastava. This innovative product is a result of
-          their collaborative efforts, expertise, and vision. We
-          have brought their unique skills and perspectives together to
+          Pathak and Anupreet Srivastava. We
+          have brought our skills and perspectives together to
           conceptualize, design, and create Adest, aiming to provide a solution
           that meets the needs of its users.
         </p>
