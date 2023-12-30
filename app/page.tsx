@@ -8,7 +8,7 @@ import cat from "@/assets/cat.png";
 import Navbar from "@/components/landingpage/Navbar";
 import AboutUs from "@/components/landingpage/AboutUs";
 import { useState } from "react";
-import Newsletter from "@/components/landingpage/Newsletter";
+
 
 export default function Home() {
   const [catActive, setCatActive] = useState(false);

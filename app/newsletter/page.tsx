@@ -5,20 +5,7 @@ import illustrationMobile from "@/assets/illustration-sign-up-mobile.svg";
 import iconList from "@/assets/icon-list.svg";
 import iconSuccess from "@/assets/icon-success.svg";
 import "@/components/landingpage/Newsletter.css";
-import { motion } from "framer-motion";
 import Image from "next/image";
-
-const succesAnimation = {
-  initial: { scale: 0 },
-  animate: { rotate: 360, scale: 1 },
-  transition: {
-    type: "spring",
-    stiffness: 260,
-    damping: 20,
-    ease: "easeOut",
-    duration: 0.2,
-  },
-};
 
 const page = () => {
   const [errorEmail, setErrorEmail] = useState<string>("");

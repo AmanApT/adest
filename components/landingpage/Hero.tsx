@@ -2,10 +2,8 @@ import "@/components/landingpage/Hero.css";
 import Image from "next/image";
 import hero from '@/assets/hero.png'
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const Hero = () => {
-  const router = useRouter();
   return (
     <section className="hero-section">
       <div className="hero-section-left">
