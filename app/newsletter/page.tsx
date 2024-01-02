@@ -10,14 +10,19 @@ import Image from "next/image";
 const Page = () => {
   const [errorEmail, setErrorEmail] = useState<string>("");
   const [errorContact, setErrorContact] = useState<string>("");
+  const [errorName, setErrorName] = useState<string>("");
   const [isActiveError, setIsActiveError] = useState<boolean>(false);
   const [showState, setShowState] = useState<boolean>(false);
+  const inputRefName = useRef<HTMLInputElement>(null);
   const inputRefEmail = useRef<HTMLInputElement>(null);
   const inputRefNum = useRef<HTMLInputElement>(null);
 
   function isValidEmail(email: string): boolean {
     return /\S+@\S+\.\S+/.test(email);
   }
+  // function isValidName(email: string): boolean {
+  //   return /\S+@\S+\.\S+/.test(email);
+  // }
 
   const switchToSignUp = () => {
     setShowState(false);
@@ -26,10 +31,19 @@ const Page = () => {
   const currentEmailValue = () => {
     return inputRefEmail.current?.value || "";
   };
+  console.log(inputRefName.current?.value);
 
   const submitEmail = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+    var regex = /^[a-zA-Z ]{2,30}$/;
 
+    if (!inputRefName.current?.value.trim()) {
+      // Check for empty or whitespace-only input
+      setErrorName("Please enter your name");
+    } else if (!regex.test(inputRefName.current?.value)) {
+      // Validate against the regex
+      setErrorName("Please enter a valid name");
+    }
     if (
       !inputRefEmail.current ||
       inputRefEmail.current.value === "" ||
@@ -49,9 +63,12 @@ const Page = () => {
       setErrorContact("Contact can't be null");
       setShowState(false);
     }
-    if(inputRefNum.current?.value.length!=10 && inputRefNum.current?.value !== ""){
-        setErrorContact("Please enter valid contact");
-        setShowState(false);
+    if (
+      inputRefNum.current?.value.length != 10 &&
+      inputRefNum.current?.value !== ""
+    ) {
+      setErrorContact("Please enter valid contact");
+      setShowState(false);
     }
   };
 
@@ -94,6 +111,22 @@ const Page = () => {
           </div>
           <div className="form">
             <div className="label-box">
+              <div className="label-state" ref={inputRefName}>
+                Name
+              </div>
+              <div className="error-state">{errorName}</div>
+            </div>
+            <input
+              type="text"
+              placeholder="Name"
+              ref={inputRefName}
+              style={{
+                borderColor: isActiveError ? "hsl(4, 100%, 67%)" : "",
+                backgroundColor: isActiveError ? "hsla(4, 100%, 67%, 0.2)" : "",
+                color: isActiveError ? "hsl(4, 100%, 67%)" : "",
+              }}
+            />
+            <div className="label-box">
               <div className="label-state" ref={inputRefEmail}>
                 Email address
               </div>
@@ -131,7 +164,7 @@ const Page = () => {
           </div>
         </div>
         <picture className="side">
-          <source media="(max-width: 950px)" srcSet={illustrationMobile} />
+          <source media="max-width: 950px" srcSet={illustrationMobile} />
           <Image src={illustrationDesktop} alt="image" />
         </picture>
       </div>

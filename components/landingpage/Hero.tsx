@@ -48,7 +48,7 @@ const Hero = () => {
       <div className="hero-section-right">
         {/* <div className="hero-section-right-child"> */}
           <Image className="hero-humara" src={hero} alt="Hero-humara" />
-        {/* </div> */}
+  
       </div>
     </section>
   );
