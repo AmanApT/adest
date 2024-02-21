@@ -15,10 +15,9 @@ const AboutUs = () => {
         <h1 className="about-us-heading">What is Adest ? </h1>
         <p>
           Adest is a product developed by Credhill, a company founded by Aman
-          Pathak and Anupreet Srivastava. We
-          have brought our skills and perspectives together to
-          conceptualize, design, and create Adest, aiming to provide a solution
-          that meets the needs of its users.
+          Pathak and Anupreet Srivastava. We have brought our skills and
+          perspectives together to conceptualize, design, and create Adest,
+          aiming to provide a solution that meets the needs of its users.
         </p>
       </div>
       <div className="about-us-right">
@@ -46,14 +45,14 @@ const AboutUs = () => {
           <p>Anupreet Srivastava</p>
           Email : anupreet.2003@gmail.com
           <div className="socials">
-            <a href="https://twitter.com/Aman__Ap">
+            <a href="https://twitter.com/AnupreetSrivas2">
               <TwitterIcon fontSize="large" />
             </a>
-            <a href="https://github.com/AmanApT">
+            <a href="https://github.com/Anupreet1213">
               <GitHubIcon fontSize="large" />
             </a>
             <a
-              href="https://www.linkedin.com/in/aman-pathak-original/
+              href="https://www.linkedin.com/in/anupreet-srivastava-973013223/
             "
             >
               <LinkedInIcon fontSize="large" />
